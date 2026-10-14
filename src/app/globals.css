@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------
+   THEME TOKENS (shadcn-style). Change --primary to re-color the site.
+------------------------------------------------------------------- */
+/* Calm sage-green palette: soft neutrals with a muted emerald accent */
+:root {
+  --radius: 0.75rem;
+  --background: #f3f7f5;
+  --foreground: #17231e;
+  --card: #ffffff;
+  --card-foreground: #17231e;
+  --popover: #ffffff;
+  --popover-foreground: #17231e;
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+  --secondary: #e7eeea;
+  --secondary-foreground: #17231e;
+  --muted: #e7eeea;
+  --muted-foreground: #55655d;
+  --accent: #dff0e7;
+  --accent-foreground: #1d5a40;
+  --accent-2: #3b9aa8; /* soft teal, used sparingly */
+  --destructive: #d93b3b;
+  --border: #d6e0da;
+  --input: #d6e0da;
+  --ring: #10b981;
+}
+
+.dark {
+  --background: #0f1512;
+  --foreground: #e4ede8;
+  --card: #151d19;
+  --card-foreground: #e4ede8;
+  --popover: #151d19;
+  --popover-foreground: #e4ede8;
+  --primary: #10b981;
+  --primary-foreground: #06231a;
+  --secondary: #1a241f;
+  --secondary-foreground: #e4ede8;
+  --muted: #1a241f;
+  --muted-foreground: #94a59b;
+  --accent: #173226;
+  --accent-foreground: #a8e6c6;
+  --accent-2: #7cc8d3;
+  --destructive: #f26b6b;
+  --border: #25322b;
+  --input: #25322b;
+  --ring: #10b981;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-2: var(--accent-2);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    var(--font-heading), var(--font-inter), ui-sans-serif, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* soft dotted backdrop used in the hero */
+.bg-dots {
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse at 70% 30%, #000 20%, transparent 70%);
+}
+
+/* ---- Lenis smooth scroll ---- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+/* ---- Custom cursor: hide the native one only when the ring is active ---- */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+html.custom-cursor input,
+html.custom-cursor textarea {
+  cursor: text !important;
+}
+
+/* ---- Typewriter caret ---- */
+@keyframes caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.caret {
+  animation: caret 1s steps(1) infinite;
+}
+
+/* ---- Slow background drift ---- */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, -18px, 0) scale(1.06);
+  }
+}
+.drift {
+  animation: drift 14s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .caret,
+  .drift {
+    animation: none;
+  }
+}
