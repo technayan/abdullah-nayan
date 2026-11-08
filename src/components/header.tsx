@@ -65,10 +65,10 @@ export function Header() {
           className="flex items-center gap-2 font-semibold"
           onClick={() => setOpen(false)}
         >
-          <span className="font-display text-xl">
+          <span className="font-display text-2xl">
             {site.shortName.split(" ")[0]}
           </span>
-          <span className="font-display text-xl text-primary">
+          <span className="font-display text-2xl text-primary">
             {site.shortName.split(" ")[1]}
           </span>
         </Link>

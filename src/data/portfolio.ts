@@ -36,12 +36,12 @@ export const site = {
   title: "Abdullah Al Mamun Nayan | Full-Stack Web Developer",
   description:
     "Portfolio of Abdullah Al Mamun Nayan, a fresher full-stack web developer building fast, accessible web apps with Next.js, TypeScript and Node.js.",
-  url: "https://your-domain.com", // TODO: deployed URL
-  email: "md.nayan8494@gmail.com",
+  url: "https://abdullah-nayan.vercel.app/",
+  email: "developer.nayan24@gmail.com",
   phone: "+8801944516122",
-  location: "Tongi, Gazipur, Dhaka-1710, Bangladesh", // TODO
+  location: "Tongi, Gazipur, Dhaka-1710, Bangladesh",
   availability: "Open to full-time and internship roles",
-  resumeUrl: "/resume.pdf", // TODO: drop the PDF into /public/resume.pdf
+  resumeUrl: "/abdullah-al-mamun-nayan-resume.pdf",
   socials: {
     github: "https://github.com/technayan",
     linkedin: "https://www.linkedin.com/in/md-abdullah-nayan/",
@@ -396,7 +396,7 @@ export const projects: Project[] = [
       "JSON Web Tokens",
       "bcrypt",
     ],
-    liveUrl: "https://devpulse-two-pi.vercel.app/",
+    liveUrl: "https://documenter.getpostman.com/view/34724156/2sBYHXPxiY",
     githubUrl: "https://github.com/technayan/devpulse",
     year: "2026",
     role: "Backend Developer",
