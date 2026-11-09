@@ -37,7 +37,7 @@ export const site = {
   description:
     "Portfolio of Abdullah Al Mamun Nayan, a fresher full-stack web developer building fast, accessible web apps with Next.js, TypeScript and Node.js.",
   url: "https://abdullah-nayan.vercel.app/",
-  email: "developer.nayan24@gmail.com",
+  email: "md.nayan8494@gmail.com",
   phone: "+8801944516122",
   location: "Tongi, Gazipur, Dhaka-1710, Bangladesh",
   availability: "Open to full-time and internship roles",
